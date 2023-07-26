@@ -1,0 +1,47 @@
+2023-07-19
+	PIT 7 ML:+125 OU:8.5 (h)
+	CLE 5 ML:-155 OU:10
+
+	BAL 8 ML:+115 OU:9 (h)
+	LAD 5 ML:-135 OU:7
+
+	TEX 5 ML:-125 OU:9.5 (h)
+	TB 1 ML:-105 OU:10
+
+	STL 6 ML:-115 OU:8.5 (h)
+	MIA 4 ML:-115 OU:12
+
+	COL 1 ML:+135 OU:12.5 (h)
+	HOU 4 ML:-155 OU:8
+
+	OAK 6 ML:+185 OU:8.5 (h)
+	BOS 5 ML:-215 OU:6
+
+	PHI 3 ML:-150 OU:9.5 (h)
+	MIL 5 ML:+120 OU:10
+
+	TOR 0 ML:-115 OU:8.5 (h)
+	SD 2 ML:-115 OU:7
+
+	LAA 7 ML:+120 OU:9 (h)
+	NYY 3 ML:-140 OU:8
+
+	CIN 3 ML:-110 OU:10.5 (h)
+	SF 2 ML:-120 OU:6
+
+	NYM 5 ML:-200 OU:9 (h)
+	CHW 1 ML:+170 OU:3
+
+	ATL 3 ML:-230 OU:10 (h)
+	ARI 5 ML:+195 OU:9
+
+	CHC 8 ML:-145 OU:9 (h)
+	WAS 3 ML:+125 OU:10
+
+	KC 2 ML:+130 OU:8.5 (h)
+	DET 3 ML:-150 OU:8
+
+	SEA 3 ML:-150 OU:7.5 (h)
+	MIN 6 ML:+130 OU:9
+
+	
