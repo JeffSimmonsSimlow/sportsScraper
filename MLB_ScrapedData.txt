@@ -1,47 +1,47 @@
 2023-07-19
-	PIT 7 ML:+125 OU:8.5 (h)
-	CLE 5 ML:-155 OU:10
+	PIT Score:7 Runs:7 ML:+125 OU:8.5 Hits:9 Errors:0 (h)
+	CLE Score:5 Runs:5 ML:-155 OU: Hits:10 Errors:0
 
-	BAL 8 ML:+115 OU:9 (h)
-	LAD 5 ML:-135 OU:7
+	BAL Score:8 Runs:8 ML:+115 OU:9 Hits:10 Errors:0 (h)
+	LAD Score:5 Runs:5 ML:-135 OU: Hits:7 Errors:0
 
-	TEX 5 ML:-125 OU:9.5 (h)
-	TB 1 ML:-105 OU:10
+	TEX Score:5 Runs:5 ML:-125 OU:9.5 Hits:9 Errors:0 (h)
+	TB Score:1 Runs:1 ML:-105 OU: Hits:10 Errors:0
 
-	STL 6 ML:-115 OU:8.5 (h)
-	MIA 4 ML:-115 OU:12
+	STL Score:6 Runs:6 ML:-115 OU:8.5 Hits:11 Errors:0 (h)
+	MIA Score:4 Runs:4 ML:-115 OU: Hits:12 Errors:1
 
-	COL 1 ML:+135 OU:12.5 (h)
-	HOU 4 ML:-155 OU:8
+	COL Score:1 Runs:1 ML:+135 OU:12.5 Hits:2 Errors:0 (h)
+	HOU Score:4 Runs:4 ML:-155 OU: Hits:8 Errors:0
 
-	OAK 6 ML:+185 OU:8.5 (h)
-	BOS 5 ML:-215 OU:6
+	OAK Score:6 Runs:6 ML:+185 OU:8.5 Hits:10 Errors:4 (h)
+	BOS Score:5 Runs:5 ML:-215 OU: Hits:6 Errors:0
 
-	PHI 3 ML:-150 OU:9.5 (h)
-	MIL 5 ML:+120 OU:10
+	PHI Score:3 Runs:3 ML:-150 OU:9.5 Hits:7 Errors:1 (h)
+	MIL Score:5 Runs:5 ML:+120 OU: Hits:10 Errors:1
 
-	TOR 0 ML:-115 OU:8.5 (h)
-	SD 2 ML:-115 OU:7
+	TOR Score:0 Runs:0 ML:-115 OU:8.5 Hits:6 Errors:1 (h)
+	SD Score:2 Runs:2 ML:-115 OU: Hits:7 Errors:0
 
-	LAA 7 ML:+120 OU:9 (h)
-	NYY 3 ML:-140 OU:8
+	LAA Score:7 Runs:7 ML:+120 OU:9 Hits:6 Errors:0 (h)
+	NYY Score:3 Runs:3 ML:-140 OU: Hits:8 Errors:1
 
-	CIN 3 ML:-110 OU:10.5 (h)
-	SF 2 ML:-120 OU:6
+	CIN Score:3 Runs:3 ML:-110 OU:10.5 Hits:4 Errors:0 (h)
+	SF Score:2 Runs:2 ML:-120 OU: Hits:6 Errors:0
 
-	NYM 5 ML:-200 OU:9 (h)
-	CHW 1 ML:+170 OU:3
+	NYM Score:5 Runs:5 ML:-200 OU:9 Hits:5 Errors:0 (h)
+	CHW Score:1 Runs:1 ML:+170 OU: Hits:3 Errors:0
 
-	ATL 3 ML:-230 OU:10 (h)
-	ARI 5 ML:+195 OU:9
+	ATL Score:3 Runs:3 ML:-230 OU:10 Hits:4 Errors:1 (h)
+	ARI Score:5 Runs:5 ML:+195 OU: Hits:9 Errors:0
 
-	CHC 8 ML:-145 OU:9 (h)
-	WAS 3 ML:+125 OU:10
+	CHC Score:8 Runs:8 ML:-145 OU:9 Hits:11 Errors:0 (h)
+	WAS Score:3 Runs:3 ML:+125 OU: Hits:10 Errors:0
 
-	KC 2 ML:+130 OU:8.5 (h)
-	DET 3 ML:-150 OU:8
+	KC Score:2 Runs:2 ML:+130 OU:8.5 Hits:5 Errors:0 (h)
+	DET Score:3 Runs:3 ML:-150 OU: Hits:8 Errors:0
 
-	SEA 3 ML:-150 OU:7.5 (h)
-	MIN 6 ML:+130 OU:9
+	SEA Score:3 Runs:3 ML:-150 OU:7.5 Hits:5 Errors:0 (h)
+	MIN Score:6 Runs:6 ML:+130 OU: Hits:9 Errors:0
 
 	

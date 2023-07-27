@@ -4,51 +4,49 @@ import sys
 import csv
 import datetime
 
-matchDate = None
-
-
-def scrape():
+def process():
+    # Get date to process
     matchupDate = input("Enter date (YYYY-MM-DD or blank for today's date):")
     print("Matchup date is: " + matchupDate)
 
     dateValues = matchupDate.split("-")
 
+    # Verify that the date entered is a valid date
     try:
-        newDate = datetime.datetime(int(dateValues[0]), int(dateValues[1]), int(dateValues[2]))
-        correctDate = True
+        rawDate = datetime.datetime(int(dateValues[0]), int(dateValues[1]), int(dateValues[2]))
     except ValueError:
         print("Unrecognized date. Check format (YYYY-MM-DD) - " + matchupDate)
-        correctDate = False
         sys.exit()
 
-    # Add loop to loop through last 10 games
-    # Previous_Date = datetime. datetime. today() – datetime. timedelta(days=1)
-    count = 0
-    attempedCount = 0
-    dateToProcess = newDate
-    while (count < 10 and attempedCount < 50):
-        Previous_Date = dateToProcess - datetime.timedelta(days=1)
-        dateToProcessFormatted = str(Previous_Date.year) + "-" + str(Previous_Date.month) + "-" + str(Previous_Date.day)
-
-        # add working code below here and change url to use dateToProcessFormatted
-        # change any reference to matchupdate in working code to dateToProcessFormatted
-        # / html / body / div[4] / div[1] / div[1] / div / a[1]
-        dateToProcess = Previous_Date
-        print(dateToProcess)
+    process_mlb(matchupDate, rawDate)
 
 
-
-        # if url found
-        # add 1 to count
-        # process date
-        count += 1
-        attempedCount += 1
-
+def process_mlb(matchupDate, rawDate):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     driver.implicitly_wait(10)
+
+    count = 0
+    rawProcessDate = rawDate
+
+    while (count < 10):
+        # ToDo: Validate rawProcessDate
+        # ToDo: If date is valid, create formatted date, else error and exit
+        formattedDate = str(rawProcessDate.year) + "-" + str(rawProcessDate.month) + "-" + str(
+            rawProcessDate.day)
+
+        # Get the next date to process
+        rawProcessDate = rawProcessDate - datetime.timedelta(days=1)
+
+        print(formattedDate)
+        count += 1
+
+
+    # ToDo: The code below will need to be inside the loop above
+
+
     driver.get("https://www.covers.com/sports/mlb/matchups?selectedDate=" + matchupDate)
 
     navigationDate = driver.find_element(By.CLASS_NAME, 'cmg_active_navigation_item')
@@ -56,7 +54,7 @@ def scrape():
     pageDate = navigationDate.get_attribute("data-date")
 
     if pageDate != matchupDate:
-        print("Matchup date not found.) - " + matchupDate)
+        print("Matchup date not found: " + matchupDate)
         sys.exit()
 
     matchup_print = ""
@@ -65,21 +63,19 @@ def scrape():
 
     with open('MLB_ScrapedData.txt', 'w') as f:
         for matchup_game in matchup_games:
-            # Date              -   matchupDate
-            # Home Team         -   homeTeam
-            # Away Team         -   awayTeam
-            # Home Score        -   homeScore
-            # Away Score        -   awayScore
-            # ATS
-            # Winning Team      -
-            # Losing Team       -
-            # Results
-            # OU
-            # W / L
-            # Results
-            # ML
-            # W / L
-            # Results
+            # X Date                    - matchupDate
+            # X Team                    - homeTeamRow[0]
+            # X Opponent                - awayTeamRow[0]
+            # X Rank
+            # X Home Team Score
+            # X Away Team Score
+            # Home Team Runs            - homeTeamRow[10]
+            # Away Team Runs            - awayTeamRow[10]
+            # Home Team Hits            - homeTeamRow[13]
+            # Away Team Hits            - awayTeamRow[13]
+            # Home Team Errors
+            # Away Team Errors
+            # Winner                    - gameWinner
 
             matchupLineScore = ""
             matchupLineScore = matchup_game.find_element(By.CLASS_NAME, 'cmg_matchup_line_score')
@@ -89,16 +85,45 @@ def scrape():
             awayTeamRow = table[1].text.split()
             homeTeamRow = table[2].text.split()
 
-            matchup_print = matchup_print + homeTeamRow[0] + " " + homeTeamRow[10] + " " + "ML:" + homeTeamRow[
-                11] + " OU:" + homeTeamRow[12] + " (h)" + "\n" + "\t"
-            matchup_print = matchup_print + awayTeamRow[0] + " " + awayTeamRow[10] + " " + "ML:" + awayTeamRow[
-                11] + " OU:" + awayTeamRow[12] + "\n" + "\n" + "\t"
+            # Determine winner and loser
+            if homeTeamRow[10] > awayTeamRow[10]:
+                gameWinner = homeTeamRow[0]
+                #homeTeamRow[0] = homeTeamRow[0] + "(w)"
+            else:
+                gameWinner = awayTeamRow[0]
+                #awayTeamRow[0] = awayTeamRow[0] + "(w)"
+
+            if homeTeamRow.__len__() == 15:
+                homeOU = homeTeamRow[12]
+                homeHits = homeTeamRow[13]
+                homeErrors = homeTeamRow[14]
+            else:
+                homeOU = ""
+                homeHits = homeTeamRow[12]
+                homeErrors = homeTeamRow[13]
+
+            if awayTeamRow.__len__() == 15:
+                awayOU = awayTeamRow[12]
+                awayHits = awayTeamRow[13]
+                awayErrors = awayTeamRow[14]
+            else:
+                awayOU = ""
+                awayHits = awayTeamRow[12]
+                awayErrors = awayTeamRow[13]
+
+            matchup_print = matchup_print + homeTeamRow[0] + " Score:" + homeTeamRow[10] + " Runs:" + homeTeamRow[10] + " ML:" + homeTeamRow[
+                11] + " OU:" + homeOU + " Hits:" + homeHits + " Errors:" + homeErrors + " (h)" + "\n" + "\t"
+            matchup_print = matchup_print + awayTeamRow[0] + " Score:" + awayTeamRow[10] + " Runs:" + awayTeamRow[10] + " ML:" + awayTeamRow[
+                11] + " OU:" + awayOU + " Hits:" + awayHits + " Errors:" + awayErrors + "\n" + "\n" + "\t"
 
         f.write(matchup_print)
 
     input("Scrape complete. Press enter to exit.")
 
 
+# ToDo: Move date validation to a new function and return true or false
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    scrape()
+    process()
